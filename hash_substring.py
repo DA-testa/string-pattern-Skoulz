@@ -14,18 +14,18 @@ def read_input():
 
     elif "F" in users_input:
         with open(str("./tests/06"), mode="r", encoding='UTF-8') as files:
-            pattern = files.readline()
-            text = files.readline()
-        return (pattern.rstrip(), text.rstrip())
-    else:
-        print("Input error")
+            pattern = files.readline().rstrip()
+            text = files.readline().rstrip()
+        return (pattern, text)
+    
+
     # after input type choice
     # read two lines 
     # first line is pattern 
     # second line is text in which to look for pattern 
     
     # return both lines in one return
-    return pattern, text
+    #return pattern, text
 
     # this is the sample return, notice the rstrip function
    # return (pattern, text)
