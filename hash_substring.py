@@ -12,7 +12,7 @@ def read_input():
         return (pattern, text)
 
     elif "F" in users_input:
-        with open(str("./tests/06"), mode="r", encoding='UTF-8') as file:
+        with open(str("tests/06"), mode="r", encoding='UTF-8') as file:
             pattern = file.readline().rstrip()
             text = file.readline().rstrip()
         return (pattern, text)
