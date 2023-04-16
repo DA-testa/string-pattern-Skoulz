@@ -1,3 +1,4 @@
+#221RDB060 Artjoms Sidorkins
 # python3
 
 def read_input():
@@ -9,13 +10,13 @@ def read_input():
     if "I" in users_input:
         pattern=input().rstrip()
         text=input().rstrip()
-        return (pattern, text)
 
-    elif "F" in users_input:
+
+    if "F" in users_input:
         with open(str("tests/06"), mode="r", encoding='UTF-8') as file:
             pattern = file.readline().rstrip()
             text = file.readline().rstrip()
-        return (pattern, text)
+    return (pattern, text)
     # after input type choice
     # read two lines 
     # first line is pattern 
