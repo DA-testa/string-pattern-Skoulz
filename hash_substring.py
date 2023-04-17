@@ -10,13 +10,13 @@ def read_input():
     if "I" in users_input:
         pattern=input().rstrip()
         text=input().rstrip()
-
+        return (pattern, text)
 
     if "F" in users_input:
         with open(str("tests/06"), mode="r", encoding='UTF-8') as file:
             pattern = file.readline().rstrip()
             text = file.readline().rstrip()
-    return (pattern, text)
+        return (pattern, text)
     # after input type choice
     # read two lines 
     # first line is pattern 
@@ -34,15 +34,13 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     # this function should find the occurrences using Rabin Karp algorithm
     pattern_length, text_length = len(pattern), len(text)
-    pattern_hash = hash(pattern)
-    text_hash = hash(text[:pattern_length])
     occurrences = []
     for i in range(text_length - pattern_length + 1):
-        if pattern_hash == text_hash and pattern == text[i:i+pattern_length]:
+        if text[i:i+pattern_length] == pattern:
             occurrences.append(i)
-        if i < text_length - pattern_length:
-            text_hash = (text_hash - ord(text[i]) * pow(10, pattern_length-1)) * 10 + ord(text[i+pattern_length])
     return occurrences
+
+    
 
 # this part launches the functions
 if __name__ == '__main__':
